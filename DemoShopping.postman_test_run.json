@@ -1,0 +1,655 @@
+{
+	"id": "b984e881-58be-4625-a5b4-dbf3ff8a24fb",
+	"name": "DemoShopping",
+	"timestamp": "2024-09-17T18:36:03.995Z",
+	"collection_id": "38265002-ada05dfd-27df-4042-bb9e-8e5fb850b5b3",
+	"folder_id": "38265002-de748ac2-5603-46dc-bbd7-4a8e257d4e64",
+	"environment_id": "38265002-d4465d03-6a3d-43a4-b4be-f7ed7095810b",
+	"totalPass": 41,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-09-17T18:35:57.513Z",
+	"totalFail": 2,
+	"results": [
+		{
+			"id": "8e700591-fa2a-4353-ba01-b503a38ef7f0",
+			"name": "Возвращает список всех продуктов",
+			"url": "https://qa.demoshopping.ru/products",
+			"time": 866,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type is application/json": true,
+				"Response is an array": true,
+				"Array contains the expected number of items": true,
+				"First item contains all required fields": true,
+				"First item fields have correct values": true,
+				"Image URL is a valid URL": true,
+				"Price is a valid number": true,
+				"Free shipping is a boolean value": true,
+				"All items contain all required fields": true,
+				"Product IDs are unique": true,
+				"Free shipping values are either 0 or 1": true,
+				"All items have correct data types": true,
+				"All prices are valid monetary values": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response is an array": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Array contains the expected number of items": {
+					"pass": 1,
+					"fail": 0
+				},
+				"First item contains all required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"First item fields have correct values": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Image URL is a valid URL": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Price is a valid number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Free shipping is a boolean value": {
+					"pass": 1,
+					"fail": 0
+				},
+				"All items contain all required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Product IDs are unique": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Free shipping values are either 0 or 1": {
+					"pass": 1,
+					"fail": 0
+				},
+				"All items have correct data types": {
+					"pass": 1,
+					"fail": 0
+				},
+				"All prices are valid monetary values": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				866
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type is application/json": true,
+					"Response is an array": true,
+					"Array contains the expected number of items": true,
+					"First item contains all required fields": true,
+					"First item fields have correct values": true,
+					"Image URL is a valid URL": true,
+					"Price is a valid number": true,
+					"Free shipping is a boolean value": true,
+					"All items contain all required fields": true,
+					"Product IDs are unique": true,
+					"Free shipping values are either 0 or 1": true,
+					"All items have correct data types": true,
+					"All prices are valid monetary values": false
+				}
+			]
+		},
+		{
+			"id": "6e76b27a-3886-46a9-a5f9-c2878f8b723d",
+			"name": "Добавление нового продукта с валидными данными",
+			"url": "https://qa.demoshopping.ru/add-product",
+			"time": 399,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type is present": true,
+				"Response time is less than 2000ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				399
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type is present": true,
+					"Response time is less than 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "ad825a0c-aff6-44f8-ad76-cf77414f44d2",
+			"name": "Добавление нового продукта с невалидными данными/400",
+			"url": "https://qa.demoshopping.ru/add-product",
+			"time": 209,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				209
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "b8aa840e-2eec-4bfc-86fa-936078187de2",
+			"name": "Поиск товара с существующим ID",
+			"url": "https://qa.demoshopping.ru/products/id/829",
+			"time": 236,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type is application/json": true,
+				"Response contains all required fields": true,
+				"Fields have correct values": true,
+				"Price is a valid number": true,
+				"Free shipping is a boolean value": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is application/json": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response contains all required fields": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Fields have correct values": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Price is a valid number": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Free shipping is a boolean value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				236
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type is application/json": true,
+					"Response contains all required fields": true,
+					"Fields have correct values": true,
+					"Price is a valid number": true,
+					"Free shipping is a boolean value": true
+				}
+			]
+		},
+		{
+			"id": "355a0002-0d96-462d-b6e9-d13608daea06",
+			"name": "Поиск товара с несуществующим и невалидным ID/400",
+			"url": "https://qa.demoshopping.ru/products/id/abc",
+			"time": 154,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				154
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "3d294a57-d2e8-4320-a165-45736c762528",
+			"name": "Поиск товара с несуществующим ID/404",
+			"url": "https://qa.demoshopping.ru/products/id/9995",
+			"time": 171,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				171
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			]
+		},
+		{
+			"id": "d84cb544-f784-4d1a-a4ea-fed2970ec5b0",
+			"name": "Удаление товара c найденным ID",
+			"url": "https://qa.demoshopping.ru/products/id/952",
+			"time": 172,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type is present": true,
+				"Response time is less than 2000ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				172
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type is present": true,
+					"Response time is less than 2000ms": true
+				}
+			]
+		},
+		{
+			"id": "5ac03958-5343-4988-904b-cc2a8295a3e8",
+			"name": "Удаление товара c ненайденным ID/404",
+			"url": "https://qa.demoshopping.ru/products/id/80",
+			"time": 149,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				149
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			]
+		},
+		{
+			"id": "04f6e555-e399-4591-b043-5bdd6cfbded4",
+			"name": "Удаление товара c запрещенным ID/403",
+			"url": "https://qa.demoshopping.ru/products/id/1",
+			"time": 193,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"Status code is 403": true,
+				"Response time is less than 2000ms": true,
+				"Content-Type is present": true
+			},
+			"testPassFailCounts": {
+				"Status code is 403": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				193
+			],
+			"allTests": [
+				{
+					"Status code is 403": true,
+					"Response time is less than 2000ms": true,
+					"Content-Type is present": true
+				}
+			]
+		},
+		{
+			"id": "f4a92dc4-96c9-4744-b40c-e3d53e0e40e0",
+			"name": "Полное обновление товара c найденным ID",
+			"url": "https://qa.demoshopping.ru/products/id/501",
+			"time": 152,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 2500ms": true,
+				"Content-Type is present": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2500ms": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				152
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 2500ms": true,
+					"Content-Type is present": true
+				}
+			]
+		},
+		{
+			"id": "2eec7b24-42d2-410d-80bb-3b045a1420c8",
+			"name": "Полное обновление товара c ненайденным ID/404",
+			"url": "https://qa.demoshopping.ru/products/id/9998",
+			"time": 138,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				138
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			]
+		},
+		{
+			"id": "1c52a276-cc44-480a-88bd-cab91b5b7e29",
+			"name": "Полное обновление товара c неверным форматом ID/400",
+			"url": "https://qa.demoshopping.ru/products/id/abc",
+			"time": 265,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				265
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		},
+		{
+			"id": "7a02670d-1940-45b8-a93b-8fb4e7e307e7",
+			"name": "Частичное обновление найденного товара по ID",
+			"url": "https://qa.demoshopping.ru/products/id/420",
+			"time": 473,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Content-Type is present": true,
+				"Response time is less than 2000ms": false
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Content-Type is present": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 2000ms": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				473
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Content-Type is present": true,
+					"Response time is less than 2000ms": false
+				}
+			]
+		},
+		{
+			"id": "f781cbbf-38c4-43f6-83cd-61f842773282",
+			"name": "Частичное обновление ненайденного товара по ID/404",
+			"url": "https://qa.demoshopping.ru/products/id/9998",
+			"time": 164,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"Status code is 404": true
+			},
+			"testPassFailCounts": {
+				"Status code is 404": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				164
+			],
+			"allTests": [
+				{
+					"Status code is 404": true
+				}
+			]
+		},
+		{
+			"id": "5960e133-8aee-41f7-8a1e-9c9a48ef463d",
+			"name": "Частичное обновление товара с неверным ID/400",
+			"url": "https://qa.demoshopping.ru/products/id/abc",
+			"time": 133,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"Status code is 400": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				133
+			],
+			"allTests": [
+				{
+					"Status code is 400": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 3874,
+	"collection": {
+		"requests": [
+			{
+				"id": "8e700591-fa2a-4353-ba01-b503a38ef7f0",
+				"method": "GET"
+			},
+			{
+				"id": "6e76b27a-3886-46a9-a5f9-c2878f8b723d",
+				"method": "POST"
+			},
+			{
+				"id": "ad825a0c-aff6-44f8-ad76-cf77414f44d2",
+				"method": "POST"
+			},
+			{
+				"id": "b8aa840e-2eec-4bfc-86fa-936078187de2",
+				"method": "GET"
+			},
+			{
+				"id": "355a0002-0d96-462d-b6e9-d13608daea06",
+				"method": "GET"
+			},
+			{
+				"id": "3d294a57-d2e8-4320-a165-45736c762528",
+				"method": "GET"
+			},
+			{
+				"id": "d84cb544-f784-4d1a-a4ea-fed2970ec5b0",
+				"method": "DELETE"
+			},
+			{
+				"id": "5ac03958-5343-4988-904b-cc2a8295a3e8",
+				"method": "DELETE"
+			},
+			{
+				"id": "04f6e555-e399-4591-b043-5bdd6cfbded4",
+				"method": "DELETE"
+			},
+			{
+				"id": "f4a92dc4-96c9-4744-b40c-e3d53e0e40e0",
+				"method": "PUT"
+			},
+			{
+				"id": "2eec7b24-42d2-410d-80bb-3b045a1420c8",
+				"method": "PUT"
+			},
+			{
+				"id": "1c52a276-cc44-480a-88bd-cab91b5b7e29",
+				"method": "PUT"
+			},
+			{
+				"id": "7a02670d-1940-45b8-a93b-8fb4e7e307e7",
+				"method": "PATCH"
+			},
+			{
+				"id": "f781cbbf-38c4-43f6-83cd-61f842773282",
+				"method": "PATCH"
+			},
+			{
+				"id": "5960e133-8aee-41f7-8a1e-9c9a48ef463d",
+				"method": "PATCH"
+			}
+		]
+	}
+}
